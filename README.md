@@ -7,10 +7,10 @@ Welcome to your new dbt project!
 
 Try running the following commands:
 - dbt run
-- dbt test
 
 
 ### Resources:
+- Follow along with the [course's slides] (https://www.getdbt.com/dbt-learn/lessons/coalesce_nola/)
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
 - Join the [chat](http://slack.getdbt.com/) on Slack for live discussions and support
 - Find [dbt events](https://events.getdbt.com) near you
