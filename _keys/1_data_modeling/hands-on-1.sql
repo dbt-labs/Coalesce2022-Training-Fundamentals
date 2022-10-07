@@ -4,4 +4,4 @@
 
 3. dbt run
 
-4. located in snowflake under your target schema in Snowflake
+4. located in Snowflake under your target schema
