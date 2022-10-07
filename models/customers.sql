@@ -1,4 +1,4 @@
-with customers as (
+with bad_customers as (
 
     select
         id as customer_id,
