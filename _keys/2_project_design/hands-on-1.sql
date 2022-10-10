@@ -22,8 +22,7 @@ staged as (
 
     select
         id as customer_id,
-        first_name,
-        last_name
+        name
     from source
 
 )
@@ -45,9 +44,9 @@ staged as (
 
     select
         id as order_id,
-        user_id as customer_id,
-        order_date,
-        status
+        customer_id,
+        ordered_at
+
     from source
 
 )
@@ -82,6 +81,6 @@ with customers as (
     select * from {{ ref('stg_customers')}}
 ),
 orders as (
-    select * from {{ ref('fct_orders')}}
+    select * from {{ ref('stg_orders')}}
 ),
 
