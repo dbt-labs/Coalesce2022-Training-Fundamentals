@@ -26,7 +26,7 @@ models:
       - name: status
         tests:
           - accepted_values:
-              values: ['placed', 'shipped', 'completed', 'returned', return_pending]
+              values: ['placed', 'shipped', 'completed', 'returned', 'return_pending']
       - name: customer_id
         tests:
           - relationships:
