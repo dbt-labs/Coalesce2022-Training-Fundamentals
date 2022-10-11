@@ -14,7 +14,7 @@ with
 
 source as (
 
-    select * from raw.jaffle_shop.customers
+    select * from raw.jaffle_shop_original.customers
 
 ),
 
@@ -36,7 +36,7 @@ with
 
 source as (
 
-    select * from raw.jaffle_shop.orders
+    select * from raw.jaffle_shop_original.orders
 
 ),
 

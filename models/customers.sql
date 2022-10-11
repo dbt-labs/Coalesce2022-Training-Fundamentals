@@ -4,7 +4,7 @@ with customers as (
         id as customer_id,
         name as customer_name
 
-    from raw.jaffle_shop.customers
+    from raw.jaffle_shop_original.customers
 
 ),
 
@@ -15,7 +15,7 @@ orders as (
         customer_id,
         ordered_at
 
-    from raw.jaffle_shop.orders
+    from raw.jaffle_shop_original.orders
 
 ),
 
