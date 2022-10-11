@@ -2,7 +2,7 @@ with customers as (
 
     select
         id as customer_id,
-        name
+        name as customer_name
 
     from raw.jaffle_shop.customers
 
@@ -19,34 +19,46 @@ orders as (
 
 ),
 
-customer_orders as (
+products as (
 
     select
-        customer_id,
+        name as product_name,
+        type as product_type,
+        price,
+        sku as product_sku
 
-        min(ordered_at) as first_order_date,
-        max(ordered_at) as most_recent_order_date,
-        count(order_id) as number_of_orders
-
-    from orders
-
-    group by 1
-
+    from raw.jaffle_shop.products
 ),
 
+order_items as (
+
+    select
+        id as order_item_id,
+        order_id,
+        sku as product_sku
+
+    from raw.jaffle_shop.order_items
+
+),
 
 final as (
 
     select
         customers.customer_id,
-        customers.name,
-        customer_orders.first_order_date,
-        customer_orders.most_recent_order_date,
-        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+        customers.customer_name,
+
+        min(orders.ordered_at) as first_order_date,
+        max(orders.ordered_at) as most_recent_order_date,
+        count(orders.order_id) as number_of_orders,
+        sum(case when products.product_type = 'beverage' then 1 else 0 end) as beverage_count,
+        sum(case when products.product_type = 'jaffle' then 1 else 0 end) as jaffle_count
 
     from customers
+    left join orders on customers.customer_id = orders.customer_id
+    left join order_items on orders.order_id = order_items.order_id
+    left join products on order_items.product_sku = products.product_sku
 
-    left join customer_orders using (customer_id)
+    group by 1, 2
 
 )
 
