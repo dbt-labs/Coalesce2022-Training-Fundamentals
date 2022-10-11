@@ -49,7 +49,7 @@ final as (
 
         min(orders.ordered_at) as first_order_date,
         max(orders.ordered_at) as most_recent_order_date,
-        count(orders.order_id) as number_of_orders,
+        count(distinct orders.order_id) as number_of_orders,
         sum(case when products.product_type = 'beverage' then 1 else 0 end) as beverage_count,
         sum(case when products.product_type = 'jaffle' then 1 else 0 end) as jaffle_count
 
