@@ -9,7 +9,7 @@ version: 2
 sources:
   - name: jaffle_shop
     database: raw
-    schema: jaffle_shop
+    schema: jaffle_shop_original
     tables:
       - name: orders
       - name: customers
@@ -46,7 +46,7 @@ version: 2
 sources:
   - name: jaffle_shop
     database: raw
-    schema: jaffle_shop
+    schema: jaffle_shop_original
     freshness:
       warn_after: {count: 12, period: hour}
       error_after: {count: 24, period: hour}
