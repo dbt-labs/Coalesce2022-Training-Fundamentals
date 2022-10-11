@@ -22,7 +22,8 @@ staged as (
 
     select
         id as customer_id,
-        name
+        first_name,
+        last_name
     from source
 
 )
@@ -44,8 +45,9 @@ staged as (
 
     select
         id as order_id,
-        customer_id,
-        ordered_at
+        user_id as customer_id,
+        order_date,
+        status
 
     from source
 
