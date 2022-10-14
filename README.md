@@ -16,3 +16,4 @@ Try running the following commands:
 - Find [dbt events](https://events.getdbt.com) near you
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
 - Look in the "_keys" folder for answers to the hands-on sessions throughout this course
+- Complete the course survey [here](https://docs.google.com/forms/d/e/1FAIpQLSewUkcyW23ge045HURj5VAH3zjCrDFSLWVkmInj4ERruh9j0g/viewform)
