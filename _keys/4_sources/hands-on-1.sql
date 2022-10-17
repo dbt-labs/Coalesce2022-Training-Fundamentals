@@ -54,13 +54,13 @@ sources:
           error_after: {count: 24, period: hour}
         loaded_at_field: _etl_loaded_at
         columns:
-          - name: order_id
+          - name: id
             tests:
               - unique
               - not_null
       - name: customers
         columns:
-          - name: customer_id
+          - name: id
             tests:
               - unique
               - not_null
